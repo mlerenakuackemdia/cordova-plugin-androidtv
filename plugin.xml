@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-androidtv"
+        version="0.1">
+    <name>AndroidTV</name>
+    <description>Cordova Android TV Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,android,tv</keywords>
+    
+    <js-module src="www/androidTv.js" name="AndroidTv">
+        <clobbers target="window.plugins.AndroidTv" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="TvPlugin">
+                <param name="android-package" value="com.kuack.plugins.androidtv.TvPlugin" />
+            </feature>
+        </config-file>
+
+        <source-file src="android/TvActivity.java" target-dir="src/com/kuack/plugins/androidtv" />
+        <source-file src="android/TvPlugin.java" target-dir="src/com/kuack/plugins/androidtv" />
+
+        <framework src="com.android.support:appcompat-v7:+" />
+        <framework src="com.android.support:recyclerview-v7:+" />
+        <framework src="com.android.support:leanback-v17:+" />
+    </platform>
+
+    <hook type="after_prepare" src="hooks/afterPrepare.js" />
+</plugin>

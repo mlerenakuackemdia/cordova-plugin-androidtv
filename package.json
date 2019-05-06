@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-lotame",
+  "version": "1.0.0",
+  "description": "Cordova Plugin Lotame",
+  "cordova": {
+    "id": "cordova-plugin-lotame",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuackmedia/cordova-plugin-lotame"
+  },
+  "engines": {
+    "cordovaDependencies": {
+      "3.0.0": {
+        "cordova-android": ">=6.1.0"
+      },
+      "4.0.0": {
+        "cordova-android": ">=6.3.0"
+      },
+      "6.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "devDependencies": {
+    "plist": "3.0.1"
+  }
+}
