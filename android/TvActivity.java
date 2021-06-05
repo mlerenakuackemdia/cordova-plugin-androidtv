@@ -2,6 +2,7 @@ package com.kuack.plugins.androidtv;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
+import android.webkit.WebView;
 
 public class TvActivity extends CordovaActivity
 {
@@ -18,5 +19,10 @@ public class TvActivity extends CordovaActivity
 
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
+
+        WebView webView = (WebView) appView.getView();
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
     }
 }
+
