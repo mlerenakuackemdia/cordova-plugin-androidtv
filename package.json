@@ -1,16 +1,16 @@
 {
-  "name": "cordova-plugin-lotame",
+  "name": "cordova-plugin-androidtv",
   "version": "1.0.0",
-  "description": "Cordova Plugin Lotame",
+  "description": "Cordova Plugin Android TV",
   "cordova": {
-    "id": "cordova-plugin-lotame",
+    "id": "cordova-plugin-androidtv",
     "platforms": [
       "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kuackmedia/cordova-plugin-lotame"
+    "url": "https://github.com/kuackmedia/cordova-plugin-androidtv"
   },
   "engines": {
     "cordovaDependencies": {
