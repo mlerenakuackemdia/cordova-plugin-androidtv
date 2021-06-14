@@ -4,11 +4,18 @@
 
 var fs = require('fs');
 var xml2js = require('xml2js');
+var path = require("path");
 
 module.exports = function (context) {
+    if (context.opts.platforms.includes('ios')) {
+        return;
+    }
+    var projectRoot = context.opts.projectRoot;
+    var appSrcMainPath = path.join(projectRoot, 'platforms', 'android', 'app', 'src', 'main');
+    
     var TV_ACTIVITY_NAME = 'com.kuack.plugins.androidtv.TvActivity';
     // manifest
-    var manifestPath = context.opts.projectRoot + '/platforms/android/app/src/main/AndroidManifest.xml';
+    var manifestPath = path.join(appSrcMainPath, 'AndroidManifest.xml');
     var androidManifest = fs.readFileSync(manifestPath).toString();
     if (androidManifest) {
         xml2js.parseString(androidManifest, function(err, manifest) {
@@ -33,6 +40,7 @@ module.exports = function (context) {
                         'android:label': '@string/app_name',
                         'android:theme': '@style/Theme.Leanback',
                         'android:screenOrientation': 'landscape',
+                        'android:launchMode': 'singleInstance',
                     },
                     'intent-filter': [{
                         action: [{
@@ -88,5 +96,14 @@ module.exports = function (context) {
             var builder = new xml2js.Builder();
             fs.writeFileSync(manifestPath, builder.buildObject(manifest), { encoding: 'utf8' });
         });
+    }
+    // copy banner
+    var sourceFile = path.join(projectRoot, 'res', 'icon', 'android', 'banner.png');
+    var targetFile = path.join(appSrcMainPath, 'res', 'drawable-xhdpi', 'banner.png');
+    try {
+        fs.copyFileSync(sourceFile, targetFile);
+    } catch (err) {
+        console.log('cordova-plugin-androidtv: copy banner failed');
+        console.log(err);
     }
 };
