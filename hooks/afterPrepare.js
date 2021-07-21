@@ -41,6 +41,7 @@ module.exports = function (context) {
                         'android:theme': '@style/Theme.Leanback',
                         'android:screenOrientation': 'landscape',
                         'android:launchMode': 'singleInstance',
+                        'android:configChanges': 'keyboard|keyboardHidden|navigation',
                     },
                     'intent-filter': [{
                         action: [{
