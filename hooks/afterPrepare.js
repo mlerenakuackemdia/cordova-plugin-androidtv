@@ -42,6 +42,7 @@ module.exports = function (context) {
                         'android:screenOrientation': 'landscape',
                         'android:launchMode': 'singleInstance',
                         'android:configChanges': 'keyboard|keyboardHidden|navigation',
+                        'android:exported': true,
                     },
                     'intent-filter': [{
                         action: [{
