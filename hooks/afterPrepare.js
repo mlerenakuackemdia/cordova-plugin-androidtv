@@ -60,7 +60,7 @@ module.exports = function (context) {
             }
 
             var nonRequiredFeatures = [
-                'android.software.leanback',
+            //    'android.software.leanback',
                 'android.hardware.touchscreen',
                 'android.hardware.faketouch',
                 'android.hardware.telephony',
