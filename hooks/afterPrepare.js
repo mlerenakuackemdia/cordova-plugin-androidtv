@@ -38,7 +38,7 @@ module.exports = function (context) {
                     '$': {
                         'android:name': TV_ACTIVITY_NAME,
                         'android:label': '@string/app_name',
-                        'android:theme': '@style/Theme.Leanback',
+                        'android:theme': '@style/Theme.AppCompat.NoActionBar',
                         'android:screenOrientation': 'landscape',
                         'android:launchMode': 'singleInstance',
                         'android:configChanges': 'keyboard|keyboardHidden|navigation',
