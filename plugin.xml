@@ -21,6 +21,8 @@
         <source-file src="android/TvActivity.java" target-dir="src/com/kuack/plugins/androidtv" />
         <source-file src="android/TvPlugin.java" target-dir="src/com/kuack/plugins/androidtv" />
         <source-file src="android/tv_plugin_layout.xml" target-dir="res/layout" />
+        <resource-file src="android/styles.xml" target="res/styles" />
+
 
         <framework src="com.android.support:appcompat-v7:+" />
         <framework src="com.android.support:recyclerview-v7:+" />

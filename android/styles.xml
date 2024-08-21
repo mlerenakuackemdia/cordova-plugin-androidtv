@@ -1,0 +1,6 @@
+<resources>
+    <!-- Definir el tema específico para TvActivity -->
+    <style name="Theme.AppCompat.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Personaliza este tema aquí -->
+    </style>
+</resources>
