@@ -108,4 +108,13 @@ module.exports = function (context) {
         console.log('cordova-plugin-androidtv: copy banner failed');
         console.log(err);
     }
+    // copy banner
+    var sourceFile = path.join(projectRoot, 'res', 'icon', 'android', 'ic_launcher.png');
+    var targetFile = path.join(appSrcMainPath, 'res', 'drawable-xhdpi', 'ic_launcher.png');
+    try {
+        fs.copyFileSync(sourceFile, targetFile);
+    } catch (err) {
+        console.log('cordova-plugin-androidtv: copy banner failed');
+        console.log(err);
+    }
 };
