@@ -23,7 +23,7 @@ module.exports = function (context) {
 
       var manifestRoot = manifest['manifest']
       var applicationTag = manifestRoot.application[0]['$']
-      applicationTag['android:banner'] = '@drawable/banner'
+      applicationTag['android:banner'] = '@drawable/ic_banner'
 
       var activityTags = manifestRoot.application[0].activity
       var tvActivityFound = false
